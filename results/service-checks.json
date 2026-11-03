@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "prompt": "Получи один факт о кошках через API.",
+      "tool_calls": [
+        {
+          "name": "get_cat_fact",
+          "arguments": {}
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "get_cat_fact",
+          "result": "{\"fact\": \"70% of your cat's life is spent asleep.\", \"source\": \"https://catfact.ninja/fact\", \"verification\": \"unverified_external_claim\"}",
+          "error": false
+        }
+      ],
+      "answer": "По данным внешнего API: утверждается, что кошки проводят во сне 70% своей жизни. Источник: catfact.ninja; утверждение не проверено независимо.",
+      "memory_action": {
+        "action": "inserted",
+        "id": "message-fd5b39f76c072685c61de551",
+        "search_visible": true,
+        "closest_score": null,
+        "threshold": 0.95
+      }
+    },
+    {
+      "prompt": "Покажи случайную собаку и опиши, что видно на изображении.",
+      "tool_calls": [
+        {
+          "name": "analyze_dog_image",
+          "arguments": {}
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "analyze_dog_image",
+          "result": "{\"url\": \"https://images.dog.ceo/breeds/terrier-kerryblue/n02093859_2075.jpg\", \"mime\": \"image/jpeg\", \"bytes\": 10738, \"sha256\": \"d75e60aa35c65bf80c72704b740b65cc02cc27d8957b6266b18467ffb3da53ce\", \"analysis\": \"На земле лежит собака с густой кудрявой шерстью тёмного, почти чёрного окраса; она вытянула передние лапы и высунула язык. Вокруг — трава с сухими листьями и участками голой земли. По фото породу определить нельзя, хотя внешне собака может напоминать пуделя или метиса.\", \"source\": \"https://dog.ceo/dog-api/\", \"pixels_sent_to_model\": true}",
+          "error": false
+        }
+      ],
+      "answer": "[Случайное изображение собаки](https://images.dog.ceo/breeds/terrier-kerryblue/n02093859_2075.jpg)\n\nНа траве лежит собака с густой тёмной кудрявой шерстью. Она вытянула передние лапы и высунула язык; вокруг видны сухие листья и участки земли. Породу по этому фото достоверно определить нельзя.",
+      "memory_action": {
+        "action": "inserted",
+        "id": "message-f95b5a9f9f8bb5019c5d0a67",
+        "search_visible": true,
+        "closest_score": 0.857964158,
+        "threshold": 0.95
+      }
+    },
+    {
+      "prompt": "Какая сейчас погода в Москве?",
+      "tool_calls": [
+        {
+          "name": "get_weather",
+          "arguments": {
+            "city": "Москва"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "get_weather",
+          "result": "{\"city\": \"Москва\", \"country\": \"Россия\", \"timezone\": \"Europe/Moscow\", \"current\": {\"time\": \"2026-11-03T07:45\", \"interval\": 900, \"temperature_2m\": -0.4, \"apparent_temperature\": -3.1, \"wind_speed_10m\": 4.0}, \"units\": {\"time\": \"iso8601\", \"interval\": \"seconds\", \"temperature_2m\": \"°C\", \"apparent_temperature\": \"°C\", \"wind_speed_10m\": \"km/h\"}, \"source\": \"https://open-meteo.com/\"}",
+          "error": false
+        }
+      ],
+      "answer": "По данным Open-Meteo, в Москве сейчас −0,4 °C, ощущается как −3,1 °C, ветер — 4 км/ч. Время измерения: 3 ноября 2026 года, 07:45 по московскому времени. Источник: Open-Meteo (open-meteo.com).",
+      "memory_action": {
+        "action": "inserted",
+        "id": "message-bb2656897aecf76cf82a4303",
+        "search_visible": true,
+        "closest_score": 0.802207828,
+        "threshold": 0.95
+      }
+    }
+  ],
+  "memory": {
+    "after_short_history_clear": "Ты называла цель на эту неделю: научиться решать линейные уравнения.",
+    "trace": {
+      "tool_calls": [],
+      "tool_results": [],
+      "answer": "Ты называла цель на эту неделю: научиться решать линейные уравнения."
+    }
+  }
+}
